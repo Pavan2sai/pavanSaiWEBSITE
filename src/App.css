@@ -173,6 +173,7 @@ button[type="button"]{
     font-family: 'Amatic SC', cursive;
     font-size: 2vw;
     outline-style: none;
+    outline-color: none;
     color:white;
 }
 button[type="button"]:hover{
