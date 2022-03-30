@@ -16,54 +16,15 @@ body {
     height:100vh;
 
 }
-#lower{
+/* -------------cricle (navbar info before touch)----------- */
+.dev_photo{
     position: absolute;
+    top: 0;
     bottom: 0;
-}
-.anime{
-    display: block;
-    width: 100vw;
-    margin: 0%;
-    padding: 0%;
-    bottom: 0%;
-    /* position: relative; */
-    z-index: -1;
-}
-.lowerbutton{
-    
-    position: absolute;
-    bottom: 0;
-    
-}
-button[type="button"]{
-    margin:0.1rem 0.5rem 0.2rem 0.1rem;
-    padding: 0 2vw;
-    background-color: #c7c;
-    border-radius: 20px;
-    font-family: 'Amatic SC', cursive;
-    font-size: 2vw;
-    outline-style: none;
-    color: black;
-}
-.container{
-    align-items: center;
-    margin: auto;
-    width:calc(100vw/5);
-    
-
-}
-.devinfo { 
-   text-align: center; 
-   
-/* h1{
-    margin:0;
-}} */}
-
-#dev_photo{
-    display: inline-block;
-    margin-top: 100px;
-    background-color: #CADB2B;
-    align-items: center;
+    left: 0;
+    right: 0;
+    margin: 13em auto;
+    background-color:#CADB2B;
     background-image: url(images/act.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -72,15 +33,26 @@ button[type="button"]{
     box-shadow: 5px 5px 5px black;
     border-radius: 500px;
     background-size: cover;
+    animation: jump1 2s  ease-in-out forwards;
+    
+    
    
 }
-.mainframe{
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    top :0;
-    position: absolute;
+.dev_photo:hover{
+    cursor: pointer;
 }
+
+.navbaranim{
+    animation: jump  0.75s ease-in-out forwards;
+}
+
+/* ----navbar ------ */
+
+.devinfo { 
+    text-align: center; 
+   
+justify-content: center;}
+    
 .dropdown{
     display: none;
     position: absolute;
@@ -110,48 +82,237 @@ button[type="button"]{
     text-decoration: none;
     display: block;
     font-family: 'Amatic SC', cursive;
-    font-size: 150%;
+    font-size: 40px;
+    
   }
   
   .dropdown-content a:hover {background-color: #ddd; border-radius: 2em; cursor: pointer;}
   .dropdown:hover .dropdown-content {display: block;position: absolute;margin: 100% auto;}
   
+/* ----------photoalbum------ */
+.top{
+display: block;
+position: relative;
+width:90%;
+height: 70%;
+margin: auto;
+background: black;
 
-  .centerdivmain{
-    display: block;
-      width: 60vw;
-      height:80vh;
-      margin: 100px auto;
-  }
-  .equaldiv{
+
+}
+.bottom{
+    font-size: 3vh;
+    letter-spacing: 1vw;
+    text-align: center;
+}
+
+/* -------------social Media------------ */
+
+.social-menu ul{
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    padding: 0;
+    margin:20px ;
+  
     display: flex;
-    justify-content: center;
-    float: left;
-      width:20vw;
-      height: 100%;
-      align-items: center;
-   letter-spacing: 0.5rem;
-  }
+}
+
+.social-menu ul li{
+    list-style: none;
+    margin: 0 15px;
+}
+
+.social-menu ul li .fab{
+    font-size: 30px;
+    line-height: 60px;
+    transition: .3s;
+    color: #000;
+}
+
+.social-menu ul li .fab:hover{
+    color: #fff;
+}
+
+.social-menu ul li a{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    transition: .6s;
+  
+}
+
+.social-menu ul li a:hover{
+    transform: translate(0, -20%);
+}
+
+.social-menu ul li:nth-child(1) a svg:hover{
+    background-color: black !important;
+}
+.social-menu ul li:nth-child(2) a svg:hover{
+    background-color: #E4405F !important;
+}
+.social-menu ul li:nth-child(3) a svg:hover{
+    background-color: red !important;
+}
+.social-menu ul li:nth-child(4) a svg:hover{
+    background-color: rgba(26,166,233,1) !important;
+}
+
+/* --------buttons------- */
+
+button[type="button"]{
+    margin:0.1rem 0.5rem 0.2rem 0.1rem;
+    padding: 0 2vw;
+    background-color: #5A5B5B;
+    border-radius: 20px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2vw;
+    outline-style: none;
+    color:white;
+}
+button[type="button"]:hover{
+    cursor: pointer;
+}
+
+  /* ----------animations------------ */
+
  
 
   @keyframes jump {
 
-    100% {
+   
+    100%{
+        position: absolute;
+        margin-top: 0;
         width: 70px;
         height: 70px;
-        display: block;
-        position: absolute;
+      
         z-index: 99;
-        margin: 0 0 0 8.9vw;
+     
         image-rendering: auto;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
 
         background:  #5A5B5B url(./images/act.png) no-repeat center center;
         background-size: cover;
-        top:0%
+       
     }
 
    
 
+}
+@keyframes jump1 {
+    
+ 
+    50%{
+        margin: 9em auto;
+    }
+ 
+    
+    100%{
+        margin: 13em auto;
+    }
+    
+}
+
+@keyframes photo1 {
+    0%{
+        left:0%;
+        transform:rotate(0deg);
+        top:0%;
+    }
+ 
+ 
+    
+    100%{
+        left:10%;
+        transform:rotate(345deg);
+        top:10%;
+    }
+    
+}
+@keyframes photo2{
+    0%{
+        left:0%;
+        transform:rotate(0deg);
+        top:0%;
+    }
+ 
+ 
+    
+    100%{
+        left:20%;
+        transform:rotate(345deg);
+        top:60%;
+    }
+    
+}
+@keyframes photo3 {
+    0%{
+        left:0%;
+        transform:rotate(0deg);
+        top:0%;
+    }
+ 
+ 
+    
+    100%{
+        left:30%;
+        transform:rotate(385deg);
+        top:10%;
+    }
+    
+}
+@keyframes photo4 {
+    0%{
+        left:0%;
+        transform:rotate(0deg);
+        top:0%;
+    }
+ 
+ 
+    
+    100%{
+        left:60%;
+        transform:rotate(345deg);
+        top:10%;
+    }
+    
+}
+@keyframes photo5 {
+    0%{
+        left:0%;
+        transform:rotate(0deg);
+        top:0%;
+    }
+ 
+ 
+    
+    100%{
+        left:75%;
+        transform:rotate(365deg);
+        top:60%;
+    }
+    
+}
+@keyframes photo6 {
+    0%{
+        left:0%;
+        transform:rotate(0deg);
+        top:0%;
+    }
+ 
+ 
+    
+    100%{
+        left:85%;
+        transform:rotate(385deg);
+        top:30%;
+    }
+    
 }
